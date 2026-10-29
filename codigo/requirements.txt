@@ -1,0 +1,11 @@
+# Testado com Python 3.13
+numpy>=2.0
+pandas>=2.2
+scipy>=1.13
+scikit-learn>=1.6      # GroupKFold(shuffle=True) precisa da versao 1.6 ou mais nova
+matplotlib>=3.9
+joblib>=1.4
+wordfreq>=3.0          # frequencia na escala Zipf (CompLex)
+pyphen>=0.14           # silabas (CompLex)
+interpret-core>=0.7    # EBM (modelos_leitura.py)
+xgboost>=2.0           # XGBoost (modelos_leitura.py)

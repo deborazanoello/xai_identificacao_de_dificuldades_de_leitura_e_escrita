@@ -1,0 +1,7 @@
+{
+  "HP": {
+    "max_features": 1.0,
+    "min_samples_leaf": 10
+  },
+  "K": 50
+}

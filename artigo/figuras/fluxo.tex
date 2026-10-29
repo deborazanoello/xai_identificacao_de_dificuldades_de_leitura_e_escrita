@@ -1,0 +1,60 @@
+% =====================================================================
+%  Fig. 1 - Fluxo da analise (TikZ). Incluido em main.tex com \input.
+%  Edite os textos diretamente aqui; as cores estao definidas em main.tex
+%  (corEscrita, corLeitura).
+% =====================================================================
+\begin{tikzpicture}[
+    font=\footnotesize,
+    >={Stealth[length=2mm]},
+    caixa/.style={draw=black!55, rounded corners=2pt, align=center,
+                  inner sep=3pt, line width=0.5pt},
+    base/.style={caixa, text width=2.9cm, minimum height=1.25cm},
+    meio/.style={caixa, text width=3.1cm, fill=black!4},
+    metodo/.style={caixa, text width=4.45cm, minimum height=1.25cm,
+                   fill=white, align=left},
+    seta/.style={->, line width=0.6pt, draw=black!70},
+    rotulo/.style={font=\scriptsize\bfseries, text=black!65}
+]
+% ---------------- bases de dados
+\node[base, fill=corEscrita!10, draw=corEscrita] (keyrecs)
+  {\textbf{Escrita · KeyRecs}\\ 96 participantes\\ alvo: hesitação, em s};
+\node[base, fill=corLeitura!10, draw=corLeitura, below=0.35cm of keyrecs] (complex)
+  {\textbf{Leitura · CompLex}\\ 8.579 termos em contexto\\ alvo: termo difícil};
+
+% ---------------- modelos preditivos
+\node[meio, right=0.75cm of $(keyrecs.east)!0.5!(complex.east)$, anchor=west,
+      minimum height=2.85cm] (ativ)
+  {\textbf{Modelo preditivo}\\[2pt]
+   Interpretável por construção:\\ regressão, árvore, EBM\\[1pt]
+   $\times$\\[1pt]
+   Caixa-preta:\\ Random Forest, XGBoost\\[2pt]
+   validação cruzada $5\times10$};
+
+% ---------------- 4 perguntas, 7 metodos globais
+\node[metodo, right=0.8cm of ativ.north east, anchor=north west, yshift=0.0cm] (m12)
+  {\textbf{Como as variáveis se combinam?}\\
+   \textcircled{\scriptsize 1} H de Friedman\\
+   \textcircled{\scriptsize 2} Decomposição funcional};
+\node[metodo, right=0.2cm of m12] (m34)
+  {\textbf{Quais variáveis importam?}\\
+   \textcircled{\scriptsize 3} Permutação\\
+   \textcircled{\scriptsize 4} Remoção, LOFO};
+\node[metodo, below=0.35cm of m12] (m56)
+  {\textbf{Como resumir o forest?}\\
+   \textcircled{\scriptsize 5} Substitutos globais\\
+   \textcircled{\scriptsize 6} Extração de regras};
+\node[metodo, below=0.35cm of m34] (m7)
+  {\textbf{Quais casos são atípicos?}\\
+   \textcircled{\scriptsize 7} Protótipos e críticas,\\
+   \phantom{x}MMD-critic};
+
+\node[draw=black!40, dashed, rounded corners=3pt, inner sep=4pt,
+      fit=(m12)(m34)(m56)(m7)] (a4) {};
+\node[rotulo, anchor=south west] at (a4.north west)
+  {MÉTODOS GLOBAIS APLICADOS AO RANDOM FOREST DE CADA TAREFA};
+
+% ---------------- setas
+\draw[seta] (keyrecs.east) -- ++(0.35,0) |- (ativ.west);
+\draw[seta] (complex.east) -- ++(0.35,0) |- (ativ.west);
+\draw[seta] (ativ.east) -- (a4.west |- ativ.east);
+\end{tikzpicture}

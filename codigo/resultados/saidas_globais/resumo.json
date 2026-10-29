@@ -1,0 +1,620 @@
+{
+  "escrita": {
+    "H_decomp": {
+      "H_variavel": {
+        "CV do tempo total": 0.13693449791966328,
+        "tempo de voo": 0.13654344499129847,
+        "idade": 0.0037355785340750874,
+        "ganho com a prática": 0.0027074575319003635,
+        "pressionamento": 0.0018300552621731113,
+        "gênero": 0.00016583984911379212,
+        "lateralidade": 6.587193822758735e-16
+      },
+      "H_pares_top5": [
+        {
+          "par": "tempo de voo × CV do tempo total",
+          "H": 0.13717450979974297,
+          "var_pd_par": 0.0007999089101772285
+        },
+        {
+          "par": "pressionamento × CV do tempo total",
+          "H": 0.005647754568576567,
+          "var_pd_par": 3.065662615906282e-05
+        },
+        {
+          "par": "tempo de voo × idade",
+          "H": 0.0039758775307460695,
+          "var_pd_par": 0.0007066631406055505
+        },
+        {
+          "par": "tempo de voo × ganho com a prática",
+          "H": 0.002872941330186348,
+          "var_pd_par": 0.0007067424531175347
+        },
+        {
+          "par": "pressionamento × tempo de voo",
+          "H": 0.0012706861204666222,
+          "var_pd_par": 0.00070781946434968
+        }
+      ],
+      "r2_efeitos_principais": 0.9791889896975607,
+      "variancia_componentes": {
+        "tempo de voo": 0.0006958184537137804,
+        "CV do tempo total": 2.830432666690053e-05,
+        "idade": 1.668553607611287e-08,
+        "pressionamento": 4.50838118537664e-09,
+        "ganho com a prática": 2.071385294270988e-09,
+        "gênero": 1.46858115227239e-11,
+        "lateralidade": 0.0
+      },
+      "n_amostra": 67,
+      "n_teste": 29
+    },
+    "substitutos": {
+      "arvore_r2": 0.9886567629764118,
+      "linear_r2": -0.32719951536542036,
+      "arvore_folhas": 8,
+      "primeira_divisao": {
+        "variavel": "tempo de voo",
+        "limiar": 0.14275000244379044
+      },
+      "segundas_divisoes": [
+        {
+          "variavel": "CV do tempo total",
+          "limiar": 0.34050385653972626
+        },
+        {
+          "variavel": "tempo de voo",
+          "limiar": 0.14925000071525574
+        }
+      ]
+    },
+    "regras": {
+      "n_regras": 3,
+      "fidelidade_r2_teste": 0.975886790306465,
+      "fidelidade_r2_treino": 0.9498601359552262,
+      "n_candidatas": 550,
+      "regras": [
+        {
+          "regra": "SE tempo de voo > 0,166",
+          "previsao": 0.12037275364035706,
+          "casos_pct": 27.083333333333332
+        },
+        {
+          "regra": "SE 0,142 < tempo de voo ≤ 0,175",
+          "previsao": 0.11755711150779358,
+          "casos_pct": 10.416666666666668
+        },
+        {
+          "regra": "SE tempo de voo > 0,094 E CV do tempo total > 0,354",
+          "previsao": 0.07961282795060823,
+          "casos_pct": 18.75
+        },
+        {
+          "regra": "SENÃO",
+          "previsao": 0.05859615046507425,
+          "casos_pct": 43.75
+        }
+      ]
+    },
+    "mmd": {
+      "prototipos": [
+        {
+          "id": "p012",
+          "hesitacao": 0.017,
+          "previsto": 0.0768830833436916,
+          "lateralidade": "Right-Handed",
+          "genero": "Male",
+          "idade": 22,
+          "voo": 0.118
+        },
+        {
+          "id": "p027",
+          "hesitacao": 0.091,
+          "previsto": 0.0658315832362741,
+          "lateralidade": "Right-Handed",
+          "genero": "Female",
+          "idade": 24,
+          "voo": 0.119
+        },
+        {
+          "id": "p083",
+          "hesitacao": 0.049,
+          "previsto": 0.05374939721344861,
+          "lateralidade": "Right-Handed",
+          "genero": "Male",
+          "idade": 21,
+          "voo": 0.065
+        },
+        {
+          "id": "p055",
+          "hesitacao": 0.0725,
+          "previsto": 0.12762842062435525,
+          "lateralidade": "Right-Handed",
+          "genero": "Female",
+          "idade": 24,
+          "voo": 0.2039999999999999
+        }
+      ],
+      "criticas": [
+        {
+          "id": "p075",
+          "hesitacao": 0.0559999999999999,
+          "previsto": 0.11856946163767039,
+          "lateralidade": "Right-Handed",
+          "genero": "Female",
+          "idade": 25,
+          "voo": 0.142
+        },
+        {
+          "id": "p045",
+          "hesitacao": 0.089,
+          "previsto": 0.07126274956083968,
+          "lateralidade": "Right-Handed",
+          "genero": "Male",
+          "idade": 23,
+          "voo": 0.111
+        },
+        {
+          "id": "p077",
+          "hesitacao": 0.09,
+          "previsto": 0.12859735320002855,
+          "lateralidade": "Left-Handed",
+          "genero": "Male",
+          "idade": 41,
+          "voo": 0.2169999999999999
+        },
+        {
+          "id": "p041",
+          "hesitacao": 0.243,
+          "previsto": 0.12265834553239344,
+          "lateralidade": "Right-Handed",
+          "genero": "Female",
+          "idade": 18,
+          "voo": 0.478
+        }
+      ],
+      "erro_medio_prototipos": 0.03623232948630534,
+      "erro_medio_criticas": 0.059811429936116475,
+      "erro_medio_todos": 0.02777768507011742,
+      "canhotos_na_amostra": 8
+    },
+    "rho_lofo_pfi_mesmas_dobras": 0.9642857142857145,
+    "pfi_mesmas_dobras": {
+      "pressionamento": {
+        "media": -0.0685470193906682,
+        "p": 0.4711581302421733
+      },
+      "tempo de voo": {
+        "media": 17.49903060849396,
+        "p": 2.393434513484386e-12
+      },
+      "CV do tempo total": {
+        "media": 0.7446295985017812,
+        "p": 0.0926639355362456
+      },
+      "ganho com a prática": {
+        "media": -0.0293954354746646,
+        "p": 0.640792874872379
+      },
+      "idade": {
+        "media": -0.0222374239515992,
+        "p": 0.6145231042612229
+      },
+      "gênero": {
+        "media": -0.0174310050993487,
+        "p": 0.7670926540158343
+      },
+      "lateralidade": {
+        "media": 0.0,
+        "p": 1.0
+      }
+    }
+  },
+  "leitura": {
+    "H_decomp": {
+      "H_variavel": {
+        "frequência": 0.2619862962277566,
+        "comprimento": 0.21476779585231776,
+        "tamanho da frase": 0.1500027376204973,
+        "sigla": 0.120215616838748,
+        "sílabas": 0.11076654810365917,
+        "forma em português": 0.10549309157385131,
+        "posição": 0.09462964783360549,
+        "nome próprio": 0.07763530531275623
+      },
+      "H_pares_top5": [
+        {
+          "par": "sílabas × forma em português",
+          "H": 0.543486844640152,
+          "var_pd_par": 7.503047573155456e-05
+        },
+        {
+          "par": "nome próprio × posição",
+          "H": 0.3398224780567599,
+          "var_pd_par": 0.00014901570616979317
+        },
+        {
+          "par": "tamanho da frase × forma em português",
+          "H": 0.3183217257133714,
+          "var_pd_par": 0.00018745103893750585
+        },
+        {
+          "par": "sílabas × posição",
+          "H": 0.3180121225302232,
+          "var_pd_par": 4.313374460213274e-05
+        },
+        {
+          "par": "comprimento × sigla",
+          "H": 0.26687495417060686,
+          "var_pd_par": 0.006819019629586749
+        }
+      ],
+      "r2_efeitos_principais": 0.9289070493087661,
+      "variancia_componentes": {
+        "frequência": 0.012693186221919292,
+        "sigla": 0.0035386306324769533,
+        "comprimento": 0.0017871652038695992,
+        "tamanho da frase": 0.00013434038091830516,
+        "nome próprio": 0.0001183901617388934,
+        "forma em português": 6.689018409920164e-05,
+        "sílabas": 2.221387778112764e-05,
+        "posição": 2.148012593453277e-05
+      },
+      "n_amostra": 300,
+      "n_teste": 300
+    },
+    "substitutos": {
+      "arvore_r2": 0.9134260874086102,
+      "linear_r2": 0.7865805617885326,
+      "arvore_folhas": 8,
+      "primeira_divisao": {
+        "variavel": "frequência",
+        "limiar": 3.375
+      },
+      "segundas_divisoes": [
+        {
+          "variavel": "comprimento",
+          "limiar": 3.5
+        },
+        {
+          "variavel": "sigla",
+          "limiar": 0.5
+        }
+      ]
+    },
+    "regras": {
+      "n_regras": 5,
+      "fidelidade_r2_teste": 0.7882697540588327,
+      "fidelidade_r2_treino": 0.7933926836259271,
+      "n_candidatas": 914,
+      "regras": [
+        {
+          "regra": "SE frequência > 3,48 E sílabas > 1,5",
+          "previsao": 0.01197402633919439,
+          "casos_pct": 50.798461359132766
+        },
+        {
+          "regra": "SE frequência > 3,48 E não é sigla",
+          "previsao": 0.022434332469255254,
+          "casos_pct": 18.335470334537828
+        },
+        {
+          "regra": "SE frequência > 3,08 E sílabas > 2,5",
+          "previsao": 0.12531674861347608,
+          "casos_pct": 6.411003613474763
+        },
+        {
+          "regra": "SE frequência > 2,92 E sílabas > 1,5",
+          "previsao": 0.16503469675374444,
+          "casos_pct": 6.912227532346428
+        },
+        {
+          "regra": "SE não é sigla E tamanho da frase ≤ 18,5",
+          "previsao": 0.25851745415401184,
+          "casos_pct": 5.0122391887166335
+        },
+        {
+          "regra": "SENÃO",
+          "previsao": 0.419604639033107,
+          "casos_pct": 12.530597971791584
+        }
+      ]
+    },
+    "mmd": {
+      "n_dificeis": 832,
+      "prototipos": [
+        {
+          "termo": "alleles",
+          "corpus": "biomed",
+          "complexidade": 0.625,
+          "prob": 0.43094691873955704,
+          "frequência": 2.82,
+          "comprimento": 7.0,
+          "sílabas": 3.0,
+          "sigla": 0.0,
+          "nome próprio": 0.0,
+          "tamanho da frase": 27.0,
+          "posição": 0.5769230769230769,
+          "forma em português": 0.0
+        },
+        {
+          "termo": "Spector",
+          "corpus": "biomed",
+          "complexidade": 0.6388888888888888,
+          "prob": 0.3022177718052782,
+          "frequência": 2.84,
+          "comprimento": 7.0,
+          "sílabas": 2.0,
+          "sigla": 0.0,
+          "nome próprio": 1.0,
+          "tamanho da frase": 34.0,
+          "posição": 0.6666666666666666,
+          "forma em português": 0.0
+        },
+        {
+          "termo": "CF",
+          "corpus": "biomed",
+          "complexidade": 0.725,
+          "prob": 0.7224119617828192,
+          "frequência": 3.85,
+          "comprimento": 2.0,
+          "sílabas": 1.0,
+          "sigla": 1.0,
+          "nome próprio": 0.0,
+          "tamanho da frase": 25.0,
+          "posição": 0.4166666666666667,
+          "forma em português": 1.0
+        },
+        {
+          "termo": "earnestness",
+          "corpus": "bible",
+          "complexidade": 0.5,
+          "prob": 0.4121287659101739,
+          "frequência": 2.39,
+          "comprimento": 11.0,
+          "sílabas": 3.0,
+          "sigla": 0.0,
+          "nome próprio": 0.0,
+          "tamanho da frase": 26.0,
+          "posição": 0.44,
+          "forma em português": 0.0
+        },
+        {
+          "termo": "mammon",
+          "corpus": "bible",
+          "complexidade": 0.578125,
+          "prob": 0.35080528049362164,
+          "frequência": 2.3,
+          "comprimento": 6.0,
+          "sílabas": 2.0,
+          "sigla": 0.0,
+          "nome próprio": 0.0,
+          "tamanho da frase": 8.0,
+          "posição": 1.0,
+          "forma em português": 0.0
+        },
+        {
+          "termo": "expiry",
+          "corpus": "europarl",
+          "complexidade": 0.5147058823529411,
+          "prob": 0.26278493210796466,
+          "frequência": 3.0,
+          "comprimento": 6.0,
+          "sílabas": 3.0,
+          "sigla": 0.0,
+          "nome próprio": 0.0,
+          "tamanho da frase": 51.0,
+          "posição": 0.16,
+          "forma em português": 0.0
+        }
+      ],
+      "criticas": [
+        {
+          "termo": "allele",
+          "corpus": "biomed",
+          "complexidade": 0.578125,
+          "prob": 0.24697740678818458,
+          "frequência": 2.91,
+          "comprimento": 6.0,
+          "sílabas": 3.0,
+          "sigla": 0.0,
+          "nome próprio": 0.0,
+          "tamanho da frase": 42.0,
+          "posição": 0.2195121951219512,
+          "forma em português": 0.0
+        },
+        {
+          "termo": "VIS",
+          "corpus": "europarl",
+          "complexidade": 0.5,
+          "prob": 0.6208831425777226,
+          "frequência": 3.43,
+          "comprimento": 3.0,
+          "sílabas": 1.0,
+          "sigla": 1.0,
+          "nome próprio": 0.0,
+          "tamanho da frase": 8.0,
+          "posição": 0.8571428571428571,
+          "forma em português": 1.0
+        },
+        {
+          "termo": "CH",
+          "corpus": "biomed",
+          "complexidade": 0.5340909090909091,
+          "prob": 0.7001180524541278,
+          "frequência": 3.95,
+          "comprimento": 2.0,
+          "sílabas": 1.0,
+          "sigla": 1.0,
+          "nome próprio": 0.0,
+          "tamanho da frase": 84.0,
+          "posição": 0.0,
+          "forma em português": 1.0
+        },
+        {
+          "termo": "Pinon",
+          "corpus": "bible",
+          "complexidade": 0.5,
+          "prob": 0.43947721276847196,
+          "frequência": 1.88,
+          "comprimento": 5.0,
+          "sílabas": 2.0,
+          "sigla": 0.0,
+          "nome próprio": 1.0,
+          "tamanho da frase": 6.0,
+          "posição": 1.0,
+          "forma em português": 0.0
+        },
+        {
+          "termo": "totalitarianism",
+          "corpus": "europarl",
+          "complexidade": 0.5735294117647058,
+          "prob": 0.2228990115219952,
+          "frequência": 2.82,
+          "comprimento": 15.0,
+          "sílabas": 7.0,
+          "sigla": 0.0,
+          "nome próprio": 0.0,
+          "tamanho da frase": 39.0,
+          "posição": 0.8421052631578947,
+          "forma em português": 0.0
+        },
+        {
+          "termo": "SYN",
+          "corpus": "europarl",
+          "complexidade": 0.546875,
+          "prob": 0.7786493343111889,
+          "frequência": 3.03,
+          "comprimento": 3.0,
+          "sílabas": 1.0,
+          "sigla": 1.0,
+          "nome próprio": 0.0,
+          "tamanho da frase": 137.0,
+          "posição": 0.3161764705882353,
+          "forma em português": 0.0
+        }
+      ],
+      "prob_media_prototipos": 0.41354927180656903,
+      "prob_media_criticas": 0.5015006934036151,
+      "prob_media_dificeis": 0.3583284929914754,
+      "piores_dificeis": [
+        {
+          "termo": "season",
+          "corpus": "bible",
+          "id": "39WSF6KUV2LXVDJD3NF76YIPMYTOEA",
+          "complexidade": 0.5,
+          "prob": 0.002161428734111737,
+          "frequencia": 5.48
+        },
+        {
+          "termo": "search",
+          "corpus": "biomed",
+          "id": "3ECKRY5B1QWLAMZ61FGF7BNLYYRZIQ",
+          "complexidade": 0.525,
+          "prob": 0.003170199637089812,
+          "frequencia": 4.96
+        },
+        {
+          "termo": "matrix",
+          "corpus": "biomed",
+          "id": "322ZSN9Z5GKVG3RSAYPTRMCL8JCT4V",
+          "complexidade": 0.5333333333333333,
+          "prob": 0.004676080601985051,
+          "frequencia": 4.07
+        },
+        {
+          "termo": "merchant",
+          "corpus": "bible",
+          "id": "3MWOYZD5WVO1PJWQWMIQWLCY0QUONZ",
+          "complexidade": 0.5131578947368421,
+          "prob": 0.006219721782130799,
+          "frequencia": 4.08
+        },
+        {
+          "termo": "enzyme",
+          "corpus": "biomed",
+          "id": "3Q9SPIIRWJM2A9B3E44VR95K4NQWAZ",
+          "complexidade": 0.5147058823529411,
+          "prob": 0.00811679094758181,
+          "frequencia": 3.82
+        }
+      ]
+    },
+    "pfi_mesmas_dobras": [
+      {
+        "variavel": "frequência",
+        "media": 29.13628056919533,
+        "dp": 1.8809195929644065,
+        "ic_inf": 27.17221318821468,
+        "ic_sup": 31.100347950175987,
+        "p": 4.56925644079961e-33,
+        "frac_pos": 1.0
+      },
+      {
+        "variavel": "comprimento",
+        "media": 2.4104037340272013,
+        "dp": 0.6345815222196427,
+        "ic_inf": 1.7477699494535957,
+        "ic_sup": 3.073037518600807,
+        "p": 2.198169111625806e-09,
+        "frac_pos": 1.0
+      },
+      {
+        "variavel": "sílabas",
+        "media": 0.1466942460119737,
+        "dp": 0.1754443139921279,
+        "ic_inf": -0.036505745938446,
+        "ic_sup": 0.3298942379623935,
+        "p": 0.1140120023829429,
+        "frac_pos": 0.84
+      },
+      {
+        "variavel": "sigla",
+        "media": 2.2675013592318423,
+        "dp": 0.7507979656839463,
+        "ic_inf": 1.4835136759612282,
+        "ic_sup": 3.0514890425024563,
+        "p": 4.5501138950741933e-07,
+        "frac_pos": 1.0
+      },
+      {
+        "variavel": "nome próprio",
+        "media": 0.1585360102319079,
+        "dp": 0.1024581535522191,
+        "ic_inf": 0.051548599361108,
+        "ic_sup": 0.2655234211027079,
+        "p": 0.0045033407291499,
+        "frac_pos": 0.92
+      },
+      {
+        "variavel": "tamanho da frase",
+        "media": 0.2057689661019211,
+        "dp": 0.1517668862176738,
+        "ic_inf": 0.0472930844916133,
+        "ic_sup": 0.3642448477122288,
+        "p": 0.0119988005261874,
+        "frac_pos": 0.92
+      },
+      {
+        "variavel": "posição",
+        "media": 0.0799417867436712,
+        "dp": 0.1258079784289021,
+        "ic_inf": -0.0514276495807661,
+        "ic_sup": 0.2113112230681086,
+        "p": 0.2272242024812416,
+        "frac_pos": 0.8
+      },
+      {
+        "variavel": "forma em português",
+        "media": 0.1830856192078689,
+        "dp": 0.1311708878816788,
+        "ic_inf": 0.0461162010645644,
+        "ic_sup": 0.3200550373511734,
+        "p": 0.0098394159042915,
+        "frac_pos": 0.9
+      }
+    ],
+    "rho_lofo_pfi_mesmas_dobras": 0.7857142857142858
+  }
+}

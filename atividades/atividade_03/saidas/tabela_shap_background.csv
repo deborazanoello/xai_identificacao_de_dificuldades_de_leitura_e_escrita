@@ -1,0 +1,13 @@
+obs,variante,Spearman vs A,máx |Δφ| vs A (s),atributo top-1,top-1 de A,dp entre sorteios (B)
+A,B · 20 sorteados (média de 10),1.0,0.001919137395624028,fix_flight_med,fix_flight_med,0.004904509082219397
+A,C · ponto mediano,0.4642857142857144,0.013030408461119476,fix_flight_med,fix_flight_med,
+A,D · path-dependent,1.0,0.00018722781096174035,fix_flight_med,fix_flight_med,
+B,B · 20 sorteados (média de 10),1.0,0.0017580874177745946,fix_flight_med,fix_flight_med,0.005397609501559271
+B,C · ponto mediano,0.7783117824941564,0.01623706615825554,fix_total_cv,fix_flight_med,
+B,D · path-dependent,1.0,0.0005073446994994114,fix_flight_med,fix_flight_med,
+C,B · 20 sorteados (média de 10),1.0,0.0014673655221418263,fix_flight_med,fix_flight_med,0.0045394698025804665
+C,C · ponto mediano,0.7412493166611013,0.012624190616868385,fix_total_cv,fix_flight_med,
+C,D · path-dependent,1.0,0.0004683745769867593,fix_flight_med,fix_flight_med,
+D,B · 20 sorteados (média de 10),0.9642857142857145,0.0019209293891088164,fix_flight_med,fix_flight_med,0.004912904262522877
+D,C · ponto mediano,0.25,0.01310477607363119,fix_flight_med,fix_flight_med,
+D,D · path-dependent,0.9642857142857145,0.00019462506140257435,fix_flight_med,fix_flight_med,
