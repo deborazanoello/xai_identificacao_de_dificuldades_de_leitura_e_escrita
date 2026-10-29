@@ -12,7 +12,7 @@
 %
 %  Todos os numeros vem dos scripts do repositorio
 %  github.com/deborazanoello/xai_identificacao_de_dificuldades_de_leitura_e_escrita
-%  (o README de la diz qual script gera cada tabela e figura).
+%  O script codigo/conferir_numeros.py confere cada numero deste arquivo.
 %  Comentarios marcados com  % CONFIRA  pedem revisao antes de submeter.
 % =====================================================================
 \documentclass[conference]{IEEEtran}
@@ -37,6 +37,9 @@
 \usepackage{url}
 \usepackage{balance}           % equilibra as colunas da ultima pagina
 \usepackage[hidelinks]{hyperref}
+\makeatletter
+\g@addto@macro\UrlBreaks{\do\_}   % links longos quebram também no sublinhado
+\makeatother
 
 % ---------------------------------------------------------------- cores
 \definecolor{corEscrita}{HTML}{2A78D6}   % mesmas cores dos graficos
@@ -82,10 +85,12 @@ Curitiba, Paraná, Brasil\\
 % =====================================================================
 \begin{abstract}
 Investigamos se modelos interpretáveis por construção bastam para duas
-previsões de um assistente proativo de leitura. A primeira é a hesitação ao
-transcrever um texto, a partir do ritmo de digitação de 96 participantes da
-base KeyRecs. A segunda é a dificuldade de 8.579 termos em contexto da base
-CompLex, tomada como aproximação dos termos que o leitor tende a buscar.
+previsões de um assistente proativo de leitura e escrita. A primeira é a
+hesitação ao transcrever um texto, a partir do ritmo de digitação de 96
+participantes da base KeyRecs, a mesma das atividades anteriores da disciplina.
+A segunda usa uma base nova nesta etapa, pública e bem maior, o CompLex: a
+dificuldade de 8.579 termos em contexto, tomada como aproximação dos termos que
+o leitor tende a buscar. As duas bases passam pelo mesmo protocolo.
 Comparamos regressão linear e logística, árvores podadas e EBM, modelos
 interpretáveis, com Random Forest e XGBoost, modelos caixa-preta, em validação
 cruzada. Na escrita, a regressão linear teve o menor erro, com RMSE de
@@ -132,17 +137,26 @@ LIME~\cite{ribeiro2016lime} e SHAP~\cite{lundberg2017shap}, quanto globais,
 continuam úteis para verificar o que a caixa-preta aprendeu e se isso coincide
 com o que o modelo interpretável mostra.
 
-Este trabalho parte das Atividades 02 a 04 da disciplina, feitas com a base
-pública KeyRecs~\cite{dias2023keyrecs,dias2023keyrecsdata}, de dinâmica de
-digitação, para a previsão na escrita. Estendemos a análise à leitura com a base
-pública CompLex~\cite{shardlow2020complex}, de complexidade lexical, usando o
-mesmo protocolo. O \textbf{objetivo} é verificar se modelos interpretáveis por
-construção bastam para as duas tarefas e usar métodos globais de XAI para
-entender o que a caixa-preta aprendeu. Buscamos responder se o modelo
-interpretável alcança a caixa-preta, quanto da previsão vem de efeitos isolados
-e quanto vem de interações, quais variáveis concentram o efeito, se é possível
-resumir a caixa-preta em algo legível com alta fidelidade e quais casos o
-modelo representa mal.
+Este trabalho continua as Atividades 02 a 04 da disciplina, que usaram apenas
+a base pública KeyRecs~\cite{dias2023keyrecs,dias2023keyrecsdata}, de dinâmica
+de digitação, para a previsão na escrita. Nesta etapa, o trabalho evoluiu em
+três frentes. Primeiro, introduzimos uma base nova, o
+CompLex~\cite{shardlow2020complex}, de complexidade lexical, também pública e
+bem maior, com 8.579 termos contra 96 participantes, para a previsão na
+leitura. Segundo, aplicamos às duas bases o mesmo protocolo, com a mesma
+comparação entre modelos, o mesmo LOFO e outros seis métodos globais, o que
+permite comparar as duas tarefas lado a lado. Terceiro, revisamos a base da
+escrita e corrigimos o cálculo do tempo de voo na senha. Todo o material, das
+atividades anteriores a esta etapa, foi consolidado em um único repositório
+público, com uma cópia de cada base.
+
+O \textbf{objetivo} é verificar se modelos interpretáveis por construção bastam
+para as duas tarefas e usar métodos globais de XAI para entender o que a
+caixa-preta aprendeu. Buscamos responder se o modelo interpretável alcança a
+caixa-preta, quanto da previsão vem de efeitos isolados e quanto vem de
+interações, quais variáveis concentram o efeito, se é possível resumir a
+caixa-preta em algo legível com alta fidelidade, quais casos o modelo
+representa mal e o que se repete e o que muda de uma base para a outra.
 
 \textbf{Enquadramento ético.} Os modelos usam padrões de digitação e
 características das palavras. Eles não fazem diagnóstico de nenhuma condição e
@@ -155,7 +169,7 @@ A Tabela~\ref{tab:bases} resume as duas bases. Em ambas, as variáveis foram
 escolhidas para serem compreensíveis por um usuário do assistente.
 
 \begin{table}[!t]
-\caption{Resumo das duas bases públicas utilizadas.}
+\caption{Resumo das duas bases públicas: a KeyRecs vem das atividades anteriores, e o CompLex entrou nesta etapa.}
 \label{tab:bases}
 \centering
 \footnotesize
@@ -167,6 +181,7 @@ escolhidas para serem compreensíveis por um usuário do assistente.
  & \textbf{Escrita} & \textbf{Leitura} \\
 \midrule
 Base        & KeyRecs~\cite{dias2023keyrecs,dias2023keyrecsdata} & CompLex~\cite{shardlow2020complex} \\
+No trabalho & Atividades 02 a 04 e esta etapa & Nova nesta etapa \\
 Pergunta    & O ritmo de digitação na senha antecipa a hesitação ao transcrever um texto?
             & Quais termos do texto o leitor tende a buscar? \\
 Unidade     & 96 participantes, após os filtros
@@ -296,6 +311,11 @@ A precisão média, área sob a curva de precisão e revocação, é mais adequa
 uma classe rara: o valor de um modelo sem informação é a própria proporção de
 difíceis, 0,097. O escore de Brier, erro quadrático médio da probabilidade
 prevista, mede a calibração; prever sempre a proporção de difíceis dá 0,088.
+Para olhar a calibração mais de perto, usamos as previsões fora da amostra de
+uma validação cruzada agrupada de 5 dobras e calculamos o erro de calibração
+esperado, a diferença média entre a probabilidade prevista e a proporção
+observada em 10 faixas de probabilidade, e a inclinação de calibração, que vale
+1 quando as probabilidades não precisam ser esticadas nem comprimidas.
 Os hiperparâmetros foram escolhidos uma única vez, em 70\% das palavras: \RF{}
 com 500 árvores, fração de 0,3 das variáveis em cada divisão e folhas com pelo
 menos 10 termos; árvore com 15 folhas, pela regra do 1-EP; XGBoost com 300
@@ -327,7 +347,9 @@ H^2_{jk} = \frac{\sum_{i=1}^{n}\left[PD^{(i)}_{jk} - PD^{(i)}_{j} - PD^{(i)}_{k}
 em que $PD^{(i)}_{jk}$ é a dependência parcial avaliada na observação $i$. A
 versão $H_j$ mede a interação de uma variável com todas as outras. O valor 0
 indica nenhuma interação, e o valor 1 indica que todo o efeito vem de
-interações.
+interações. Na escrita, estimamos a incerteza do H por bootstrap, com 100
+reamostragens dos participantes de treino e a floresta treinada de novo em cada
+uma.
 
 \emph{Decomposição funcional.} Escreve a previsão como
 \begin{equation}
@@ -361,7 +383,8 @@ combinações artificiais de valores~\cite{hooker2021permutation} e mede a
 contribuição única da variável: se outra variável carrega a mesma informação, a
 remoção quase não prejudica o modelo. A concordância entre as ordenações de
 importância do LOFO e da permutação foi medida pela correlação de Spearman,
-$\rho$.
+$\rho$, com intervalo de 95\% por bootstrap das 10 repetições da validação
+cruzada.
 
 Na escrita, aprofundamos o LOFO com testes complementares, todos nas mesmas 50
 dobras e com os mesmos hiperparâmetros: a \emph{estabilidade} do ranking, em
@@ -469,7 +492,11 @@ e no Brier, nenhuma diferença entre esses quatro modelos foi significativa, com
 $p \geq 0,06$. A árvore podada ficou abaixo do EBM, com $p = 0,02$ na AUC. A
 regra das palavras raras, que usa apenas a frequência, já alcançou AUC de 0,849
 e precisão média de 0,356, quase quatro vezes o valor de um modelo sem
-informação.
+informação. A calibração confirma o Brier: o erro de calibração esperado foi de
+0,009 no EBM e no \RF{} e de 0,012 na regressão logística. A inclinação de
+calibração foi de 0,99 no EBM e na regressão logística, próxima do ideal, e de
+1,16 no \RF{}, cujas probabilidades ficam um pouco menos extremas do que
+deveriam.
 
 Na escrita, as explicações locais da Atividade 03 também apontaram um degrau no
 tempo de voo perto de 0,14~s, e LIME e SHAP concordaram sobre a variável
@@ -481,7 +508,9 @@ A Tabela~\ref{tab:sintese} sintetiza os resultados dos sete métodos globais,
 detalhados nesta subseção e nas seguintes. Na escrita, as variáveis com mais
 interação foram o CV do tempo total e o tempo de voo, com $H = 0,17$ e 0,16, e
 o único par com interação foi justamente esse, com $H = 0,17$; nas demais
-variáveis, $H$ ficou abaixo de 0,01. Na leitura, a variável com mais interação
+variáveis, $H$ ficou abaixo de 0,01. Esses valores são incertos: no bootstrap
+dos participantes de treino, o intervalo de 95\% do H do tempo de voo foi de
+0,02 a 0,25. Na leitura, a variável com mais interação
 foi a frequência, com $H = 0,26$, seguida do comprimento, com $H = 0,21$. Os
 maiores $H$ por par na leitura, de até 0,54, entre sílabas e forma em
 português, aparecem entre variáveis de efeito quase nulo, em que o denominador
@@ -655,11 +684,59 @@ aproxima do modelo completo.}
 \end{figure*}
 
 As ordenações de importância do LOFO e da permutação, nas mesmas dobras,
-tiveram correlação de Spearman de $\rho = 0,89$ na escrita e de $\rho = 0,79$
-na leitura. Os dois métodos concordam no principal: o tempo de voo, na escrita,
-e a frequência, na leitura. Na leitura, a permutação dá mais peso relativo a
-comprimento e sigla e ainda destaca variáveis que o LOFO zera, como nome
-próprio e forma em português.
+tiveram correlação de Spearman de $\rho = 0,89$ na escrita, com intervalo de
+95\% de 0,71 a 1,00, e de $\rho = 0,79$ na leitura, de 0,67 a 0,86. Os dois
+métodos concordam no principal: o tempo de voo, na escrita, e a frequência, na
+leitura. Na leitura, a permutação dá mais peso relativo a comprimento e sigla e
+ainda destaca variáveis que o LOFO zera, como nome próprio e forma em
+português.
+
+\subsection{Escrita e leitura lado a lado}
+
+A Tabela~\ref{tab:comparacao} reúne as duas tarefas. Como as variáveis de cada
+base são diferentes, a variável dominante também é: o tempo de voo na escrita e
+a frequência na leitura. Cada uma domina por um motivo direto. Na escrita, a
+hesitação é a mediana da pausa entre teclas no texto livre, e o tempo de voo é a
+mesma pausa medida na senha, isto é, o mesmo hábito de digitação observado em
+outra tarefa. Na leitura, a frequência mede quanto a palavra aparece no idioma,
+e as palavras raras são as que o leitor viu menos vezes; só ordenar os termos
+pela raridade já dá AUC de 0,849.
+
+O que se repete é o padrão: nas duas bases, o modelo interpretável alcança a
+caixa-preta, a floresta é quase aditiva, uma variável concentra a informação e
+a importância se divide quando há uma substituta. O que muda é a suficiência:
+na escrita, o tempo de voo sozinho basta, e na leitura a frequência precisa do
+comprimento. A base maior também permite distinguir efeitos menores. Na
+leitura, sigla e comprimento, com menos de 1\% da AUC, seguem significativos
+após a correção de Holm, enquanto na escrita o CV do tempo total, com 1,5\% do
+RMSE, não se distingue de zero.
+
+\begin{table}[!t]
+\caption{Escrita e leitura lado a lado, com o mesmo protocolo.}
+\label{tab:comparacao}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{1.7cm}
+                >{\raggedright\arraybackslash}p{3.15cm}
+                >{\raggedright\arraybackslash}p{3.15cm}@{}}
+\toprule
+ & \textbf{Escrita · KeyRecs} & \textbf{Leitura · CompLex} \\
+\midrule
+Tamanho          & 96 participantes, 7 variáveis & 8.579 termos, 8 variáveis \\
+Interpretável    & Linear: RMSE de 0,0314~s, contra 0,0342~s da floresta, $p = 0,33$ & EBM: AUC de 0,919, igual à floresta, $p = 0,82$ \\
+Aditividade      & Efeitos principais: \Rdois{}~$= 0,97$ & Efeitos principais: \Rdois{}~$= 0,93$ \\
+Domina o LOFO    & Tempo de voo: +10,4~ms, 30\% do RMSE & Frequência: +16,7 pontos de AUC \\
+Por que domina   & É a mesma pausa do alvo, medida na senha & Palavra rara é a que o leitor menos viu \\
+Outras após Holm & Nenhuma & Sigla, +0,9, e comprimento, +0,8 \\
+Basta sozinha    & Sim: 34,8 contra 34,6~ms & Não: 0,808; com o comprimento, 0,901 \\
+Substituta       & Tempo total, de propósito, $r = 0,78$ & Sílabas, natural, $r = 0,87$ \\
+Concordância     & $\rho = 0,89$ com a permutação, IC de 0,71 a 1,00 & $\rho = 0,79$ com a permutação, IC de 0,67 a 0,86 \\
+\bottomrule
+\multicolumn{3}{@{}p{0.97\columnwidth}@{}}{\scriptsize IC: intervalo de 95\%
+por bootstrap das 10 repetições da validação cruzada.}
+\end{tabular}
+\end{table}
 
 \begin{table*}[!t]
 \caption{Síntese dos sete métodos globais aplicados ao Random Forest nas duas tarefas.}
@@ -890,6 +967,12 @@ regressão linear teve o menor erro, com RMSE de 0,031~s, sem diferença para o
 \RF{}, $p = 0,33$; na leitura, o EBM igualou o \RF{} em AUC, de 0,919, em
 precisão média e em calibração.
 
+A principal evolução em relação às Atividades 02 a 04 foi levar o mesmo
+protocolo a uma base nova, pública e bem maior. Isso permitiu separar o que é
+próprio de cada tarefa, como a variável que domina e se ela basta sozinha, do
+que se repete nas duas, e a base maior mostrou efeitos pequenos que a base da
+escrita, com 96 participantes, não consegue distinguir de zero.
+
 Os métodos globais mostraram que o \RF{} é quase aditivo, com 93\% a 97\% da
 previsão vindo dos efeitos principais; que poucas variáveis concentram o
 efeito; e que a árvore substituta e as regras o resumem com fidelidade de 0,79
@@ -917,11 +1000,16 @@ substitutas~\cite{covert2021explaining}.
 % =====================================================================
 \section*{Disponibilidade de dados e código}
 
-As duas bases são públicas e têm licença CC BY. A KeyRecs está no Zenodo, em
-\url{https://doi.org/10.5281/zenodo.7886743}, e o CompLex, no GitHub, em
-\url{https://github.com/MMU-TDMLab/CompLex}. Os códigos, as tabelas usadas, os
-resultados e uma cópia das duas bases com a indicação de origem estão em
+Todo o trabalho, das Atividades 02 a 04 até esta etapa, está consolidado em um
+único repositório, com os códigos, as tabelas, os resultados e uma cópia de cada
+base, o que permite acompanhar a evolução do trabalho:
 \url{https://github.com/deborazanoello/xai_identificacao_de_dificuldades_de_leitura_e_escrita}.
+As duas bases são públicas e têm licença CC BY. A KeyRecs tem a fonte original
+no Zenodo, \url{https://doi.org/10.5281/zenodo.7886743}, e a cópia em
+\url{https://github.com/deborazanoello/xai_identificacao_de_dificuldades_de_leitura_e_escrita/tree/main/dados/keyrecs}.
+O CompLex tem a fonte original no GitHub,
+\url{https://github.com/MMU-TDMLab/CompLex}, e a cópia em
+\url{https://github.com/deborazanoello/xai_identificacao_de_dificuldades_de_leitura_e_escrita/tree/main/dados/complex}.
 
 % =====================================================================
 \balance

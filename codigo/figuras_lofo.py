@@ -138,16 +138,16 @@ salva("01_lofo_rf_ic_corrigido.png")
 fig, ax = plt.subplots(figsize=(9.2, 5.2))
 y = np.arange(len(rf)); ing = 1.96 * rf["dp_ms"].values / np.sqrt(K)
 ax.errorbar(m, y + 0.17, xerr=ing, fmt="o", color=C["suave"], ecolor=C["suave"], capsize=4, lw=1.6, ms=7,
-            label="IC sem correção: 1,96·dp/√50 (trata as 50 dobras como independentes)")
+            label="IC sem correção: 1,96·dp/√50, como se as 50 dobras fossem independentes")
 ax.errorbar(m, y - 0.17, xerr=h, fmt="o", color=C["lar"], ecolor=C["lar"], capsize=4, lw=1.6, ms=7,
-            label="IC corrigido (Nadeau & Bengio)")
+            label="IC com a correção de Nadeau e Bengio")
 ax.axvline(0, color=C["tinta"], lw=1.2)
 ax.set_yticks(y, [R[v] for v in rf["variavel"]]); ax.grid(axis="y", visible=False)
 ax.set_xlim(-1.2, 3.0)
 ax.annotate(f"tempo de voo: {br(m[-1],1)} ms\n(fora da escala)", xy=(3.0, y[-1]), xytext=(1.25, y[-1]),
             va="center", fontsize=12.5, color=C["tinta2"], arrowprops={"arrowstyle": "->", "color": C["suave"]})
 ax.set_xlabel("aumento do RMSE ao remover (ms) · zoom perto de zero")
-ax.legend(loc="lower right", fontsize=12)
+ax.legend(loc="upper center", bbox_to_anchor=(0.45, -0.17), fontsize=12, frameon=False)
 salva("02_ic_ingenuo_x_corrigido.png")
 
 # ════════ 3. Blocos

@@ -106,6 +106,20 @@ item("Seção V-E", "prob críticas", f(m["prob_media_criticas"], 2)); item("Se�
 for x in g["leitura"]["mmd"]["criticas"] + g["leitura"]["mmd"]["prototipos"]:
     item("Seção V-E", "termo do MMD-critic", x["termo"])
 
+# ---------------------------------------------------------------- indicadores extras
+x = json.load(open("resultados/saidas_extras/resumo.json"))
+for base in ("escrita", "leitura"):
+    a, b = x[f"{base}_rho_ic95"]
+    item("Tabela VI", f"IC rho {base}", f"{f(a, 2)} a {f(b, 2)}")
+a, b = x["H_escrita"]["tempo de voo"]["ic95"]
+item("Seção V-B", "IC H tempo de voo", f"{f(a, 2)} a {f(b, 2)}")
+cal = x["calibracao_leitura"]
+item("Seção V-A", "ECE EBM", f(cal["EBM"]["ece"], 3)); item("Seção V-A", "ECE floresta", f(cal["Random Forest"]["ece"], 3))
+item("Seção V-A", "ECE logística", f(cal["Regressão logística"]["ece"], 3))
+item("Seção V-A", "inclinação EBM", f(cal["EBM"]["inclinacao"], 2))
+item("Seção V-A", "inclinação logística", f(cal["Regressão logística"]["inclinacao"], 2))
+item("Seção V-A", "inclinação floresta", f(cal["Random Forest"]["inclinacao"], 2))
+
 falta = [(o, dsc, txt) for o, dsc, txt in itens if txt not in tex]
 print(f"{len(itens) - len(falta)} de {len(itens)} números encontrados no artigo.")
 for o, dsc, txt in falta:
