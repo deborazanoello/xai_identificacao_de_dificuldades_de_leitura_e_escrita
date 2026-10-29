@@ -1,0 +1,49 @@
+{
+  "HP": {
+    "max_features": 1.0,
+    "min_samples_leaf": 10
+  },
+  "K": 50,
+  "rmse_todas_ms": 34.61241825700665,
+  "rmse_mediana_ms": 45.16153049990604,
+  "base_mae_ms": 27.91074112428353,
+  "base_rmse_top25_ms": 42.876641235955,
+  "pfi_voo_queda_com_total_ms": {
+    "media": -4.498509489848228,
+    "dp": 2.2412779493718773,
+    "ic_inf": -6.838865201245092,
+    "ic_sup": -2.158153778451364,
+    "p": 0.00032931086537017155,
+    "frac_pos": 0.0
+  },
+  "hp_reajustados": {
+    "sem fix_dwell_med": {
+      "max_features": 1.0,
+      "min_samples_leaf": 10
+    },
+    "sem fix_flight_med": {
+      "max_features": 1.0,
+      "min_samples_leaf": 10
+    },
+    "sem fix_total_cv": {
+      "max_features": 1.0,
+      "min_samples_leaf": 10
+    },
+    "sem fix_ganho_pratica": {
+      "max_features": 1.0,
+      "min_samples_leaf": 10
+    },
+    "sem dem_idade": {
+      "max_features": 1.0,
+      "min_samples_leaf": 10
+    },
+    "sem dem_genero": {
+      "max_features": 1.0,
+      "min_samples_leaf": 10
+    },
+    "sem dem_lateralidade": {
+      "max_features": 1.0,
+      "min_samples_leaf": 10
+    }
+  }
+}

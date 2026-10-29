@@ -1,0 +1,11 @@
+{
+  "HP": {
+    "max_features": 1.0,
+    "min_samples_leaf": 10
+  },
+  "K": 50,
+  "rmse_todas_ms": 34.56292472156757,
+  "rmse_mediana_ms": 45.16153049990604,
+  "base_mae_ms": 27.929659830670087,
+  "base_rmse_top25_ms": 42.048185486378806
+}

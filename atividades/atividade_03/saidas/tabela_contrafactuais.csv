@@ -1,0 +1,25 @@
+obs,i,k,tipo,variáveis,mudanças,custo (Σ|Δz|),nova predição (s),dist. ao treino,plausível
+A,0,1,plausível,fix_flight_med,fix_flight_med: 0.188→0.141,0.9223028549024441,0.07773055830443627,1.2259544777396667,True
+A,1,1,irrestrita,fix_flight_med,fix_flight_med: 0.188→0.141,0.9223028549024441,0.07773055830443627,1.2259544777396667,True
+A,2,2,plausível,"fix_flight_med, fix_total_cv",fix_flight_med: 0.188→0.135; fix_total_cv: 0.354→0.355,1.0320534421518548,0.07430151934574226,1.2294662754295964,True
+A,3,2,irrestrita,"fix_flight_med, fix_total_cv",fix_flight_med: 0.188→0.135; fix_total_cv: 0.354→0.355,1.0320534421518548,0.07430151934574226,1.2294662754295964,True
+A,4,3,plausível,"fix_dwell_med, fix_flight_med, fix_total_cv",fix_dwell_med: 0.083→0.0833; fix_flight_med: 0.188→0.142; fix_total_cv: 0.354→0.32,1.0811781943158296,0.07877332621107945,1.239228967244506,True
+A,5,3,irrestrita,"fix_dwell_med, fix_flight_med, fix_total_cv",fix_dwell_med: 0.083→0.0833; fix_flight_med: 0.188→0.142; fix_total_cv: 0.354→0.32,1.0811781943158296,0.07877332621107945,1.239228967244506,True
+A,6,4,plausível,"fix_dwell_med, fix_flight_med, fix_total_cv, fix_ganho_pratica",fix_dwell_med: 0.083→0.0833; fix_flight_med: 0.188→0.142; fix_total_cv: 0.354→0.3; fix_ganho_pratica: 0.349→0.338,1.2698786285272075,0.07844857157046055,1.2417743005918311,True
+A,7,4,irrestrita,"fix_dwell_med, fix_flight_med, fix_total_cv, fix_ganho_pratica",fix_dwell_med: 0.083→0.0833; fix_flight_med: 0.188→0.142; fix_total_cv: 0.354→0.3; fix_ganho_pratica: 0.349→0.338,1.2698786285272075,0.07844857157046055,1.2417743005918311,True
+B,0,1,plausível,fix_flight_med,fix_flight_med: 0.082→0.143,1.1949888203046357,0.10230932049887888,1.2142233504537725,True
+B,1,1,irrestrita,fix_flight_med,fix_flight_med: 0.082→0.143,1.1949888203046357,0.10230932049887888,1.2142233504537725,True
+B,2,2,plausível,"fix_flight_med, fix_ganho_pratica",fix_flight_med: 0.082→0.144; fix_ganho_pratica: 0.0524→0.0576,1.2516742006579062,0.11380695796048722,1.189827526477199,True
+B,3,2,irrestrita,"fix_flight_med, fix_ganho_pratica",fix_flight_med: 0.082→0.144; fix_ganho_pratica: 0.0524→0.0576,1.2516742006579062,0.11380695796048722,1.189827526477199,True
+B,4,3,plausível,"fix_dwell_med, fix_flight_med, fix_ganho_pratica",fix_dwell_med: 0.088→0.0879; fix_flight_med: 0.082→0.149; fix_ganho_pratica: 0.0524→0.0597,1.361909648282933,0.11703233073956754,1.184723528273166,True
+B,5,3,irrestrita,"fix_dwell_med, fix_flight_med, fix_ganho_pratica",fix_dwell_med: 0.088→0.0879; fix_flight_med: 0.082→0.149; fix_ganho_pratica: 0.0524→0.0597,1.361909648282933,0.11703233073956754,1.184723528273166,True
+B,6,4,plausível,"fix_dwell_med, fix_flight_med, fix_total_cv, fix_ganho_pratica",fix_dwell_med: 0.088→0.089; fix_flight_med: 0.082→0.166; fix_total_cv: 0.184→0.118; fix_ganho_pratica: 0.0524→0.0944,2.34346600312153,0.11817444917719852,1.2060095350782105,True
+B,7,4,irrestrita,"fix_dwell_med, fix_flight_med, fix_total_cv, fix_ganho_pratica",fix_dwell_med: 0.088→0.089; fix_flight_med: 0.082→0.166; fix_total_cv: 0.184→0.118; fix_ganho_pratica: 0.0524→0.0944,2.34346600312153,0.11817444917719852,1.2060095350782105,True
+C,0,1,plausível,fix_flight_med,fix_flight_med: 0.107→0.144,0.7189172104411983,0.11607268658658905,1.0184518544769623,True
+C,1,1,irrestrita,fix_flight_med,fix_flight_med: 0.107→0.144,0.7189172104411983,0.11607268658658905,1.0184518544769623,True
+C,2,2,plausível,"fix_flight_med, fix_ganho_pratica",fix_flight_med: 0.107→0.144; fix_ganho_pratica: 0.273→0.272,0.7373484075374942,0.11607268658658906,1.0287576947115578,True
+C,3,2,irrestrita,"fix_flight_med, fix_ganho_pratica",fix_flight_med: 0.107→0.144; fix_ganho_pratica: 0.273→0.272,0.7373484075374942,0.11607268658658906,1.0287576947115578,True
+C,4,3,plausível,"fix_flight_med, fix_total_cv, fix_ganho_pratica",fix_flight_med: 0.107→0.149; fix_total_cv: 0.427→0.418; fix_ganho_pratica: 0.273→0.275,0.8745788609140863,0.11816435412380047,1.0787292914624618,True
+C,5,3,irrestrita,"fix_flight_med, fix_total_cv, fix_ganho_pratica",fix_flight_med: 0.107→0.149; fix_total_cv: 0.427→0.418; fix_ganho_pratica: 0.273→0.275,0.8745788609140863,0.11816435412380047,1.0787292914624618,True
+C,6,4,plausível,"fix_dwell_med, fix_flight_med, fix_total_cv, fix_ganho_pratica",fix_dwell_med: 0.136→0.152; fix_flight_med: 0.107→0.166; fix_total_cv: 0.427→0.44; fix_ganho_pratica: 0.273→0.286,2.0554990121847783,0.11903714431343833,0.9519253643957193,True
+C,7,4,irrestrita,"fix_dwell_med, fix_flight_med, fix_total_cv, fix_ganho_pratica",fix_dwell_med: 0.136→0.152; fix_flight_med: 0.107→0.166; fix_total_cv: 0.427→0.44; fix_ganho_pratica: 0.273→0.286,2.0554990121847783,0.11903714431343833,0.9519253643957193,True

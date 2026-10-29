@@ -1,0 +1,13 @@
+{
+  "tabela": "tabela_analitica_corrigida.csv",
+  "HP_rf": {
+    "max_features": 1.0,
+    "min_samples_leaf": 10
+  },
+  "alpha_arvore": 0.00014089780665160778,
+  "folhas_arvore": 2,
+  "arvore": "|--- fix_flight_med <= 0.1380\n|   |--- value: [0.0635]\n|--- fix_flight_med >  0.1380\n|   |--- value: [0.1200]\n",
+  "p_linear_vs_rf": 0.32542058988042877,
+  "p_arvore_vs_rf": 0.16568598062419754,
+  "r_voo_hesitacao": 0.725247108594208
+}

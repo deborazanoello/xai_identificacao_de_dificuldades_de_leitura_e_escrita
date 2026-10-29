@@ -1,0 +1,8 @@
+método,tempo p/ 1 obs. (s),escopo do resultado,reprodutibilidade,dp médio dos pesos entre sementes (s)
+"CP (5 contínuas, 101 pts)",0.5616507000000297,uma observação,determinístico,0.0
+ICE (96 curvas × 5 variáveis),0.824782300000038,todo o conjunto,determinístico,0.0
+"LIME (m=5000, K=5)",0.22991170000000238,uma observação,ALEATÓRIO (semente),0.0005198541866413552
+SHAP — TreeExplainer interventional,0.002126200000020617,uma observação (e global ao agregar),determinístico,0.0
+SHAP — enumeração exata (2⁷),0.16590069999995194,uma observação,determinístico,0.0
+SHAP — KernelExplainer,0.2828807000000211,uma observação,determinístico (p pequeno),0.0
+Contrafactuais (busca exaustiva),2.1444188999999483,uma observação + alvo,determinístico,0.0

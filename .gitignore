@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# arquivos gerados que não vão para o repositório
+codigo/resultados/figuras*/
+codigo/resultados/saidas_complex_rapido/
+codigo/tabelas/tabela_analitica_refeita.csv
+
+# documentos e apresentações
+*.pptx
+*.docx
+*.pdf
+!artigo/figuras/*.pdf
+*.mp4
+*.zip
+
+# LaTeX
+artigo/*.aux
+artigo/*.bbl
+artigo/*.blg
+artigo/*.log
+artigo/*.out
+artigo/*.synctex.gz
+
+# sistema
+.DS_Store
+Thumbs.db

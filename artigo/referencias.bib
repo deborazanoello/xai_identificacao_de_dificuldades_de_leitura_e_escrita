@@ -1,0 +1,310 @@
+% =====================================================================
+%  referencias.bib - Identificacao de Padroes de Dificuldade em Leitura
+%  e Escrita via XAI. Estilo: IEEEtran.bst (ja incluso no Overleaf).
+%
+%  Todas as entradas foram conferidas em 22/10/2026 e de novo em 28/10/2026 nas fontes oficiais
+%  (Crossref, DataCite/arXiv, ACL Anthology, NeurIPS Proceedings, JMLR).
+%  O IEEEtran.bst nao imprime o campo "doi"; por isso o DOI tambem esta
+%  no campo "note", que aparece no PDF como link. Trabalhos sem DOI
+%  (ACL Anthology, NeurIPS, JMLR, livro) tem o link oficial em "url".
+% =====================================================================
+
+% ---------------------------------------------------------- controle do IEEEtran.bst
+% Escreve o nome dos autores repetidos, em vez de um travessao.
+@IEEEtranBSTCTL{IEEEexample:BSTcontrol,
+  CTLdash_repeated_names = "no"
+}
+
+% ---------------------------------------------------------- bases de dados
+@article{dias2023keyrecs,
+  author  = {Dias, Tiago and Vitorino, Jo{\~a}o and Maia, Eva and Sousa, Orlando and Pra{\c{c}}a, Isabel},
+  title   = {{KeyRecs}: A keystroke dynamics and typing pattern recognition dataset},
+  journal = {Data in Brief},
+  volume  = {50},
+  year    = {2023},
+  doi     = {10.1016/j.dib.2023.109509},
+  note    = {{Art. no.} 109509, doi: \href{https://doi.org/10.1016/j.dib.2023.109509}{\nolinkurl{10.1016/j.dib.2023.109509}}}
+}
+
+@inproceedings{shardlow2020complex,
+  author    = {Shardlow, Matthew and Cooper, Michael and Zampieri, Marcos},
+  title     = {{CompLex} --- A New Corpus for Lexical Complexity Prediction from {Likert} Scale Data},
+  booktitle = {Proceedings of the 1st Workshop on Tools and Resources to Empower People with REAding DIfficulties (READI)},
+  pages     = {57--62},
+  address   = {Marseille, France},
+  publisher = {European Language Resources Association},
+  year      = {2020},
+  url       = {https://aclanthology.org/2020.readi-1.9/}
+}
+
+
+% ---------------------------------------------------------- interpretabilidade (geral)
+@book{molnar2022,
+  author    = {Molnar, Christoph},
+  title     = {Interpretable Machine Learning: A Guide for Making Black Box Models Explainable},
+  edition   = {2},
+  publisher = {Christoph Molnar},
+  address   = {Munich, Germany},
+  year      = {2022},
+  isbn      = {979-8411463330},
+  url       = {https://christophm.github.io/interpretable-ml-book/}
+}
+
+@article{rudin2019stop,
+  author  = {Rudin, Cynthia},
+  title   = {Stop explaining black box machine learning models for high stakes decisions and use interpretable models instead},
+  journal = {Nature Machine Intelligence},
+  volume  = {1},
+  number  = {5},
+  pages   = {206--215},
+  year    = {2019},
+  doi     = {10.1038/s42256-019-0048-x},
+  note    = {doi: \href{https://doi.org/10.1038/s42256-019-0048-x}{\nolinkurl{10.1038/s42256-019-0048-x}}}
+}
+
+@misc{doshivelez2017,
+  author       = {Doshi-Velez, Finale and Kim, Been},
+  title        = {Towards a Rigorous Science of Interpretable Machine Learning},
+  howpublished = {arXiv:1702.08608},
+  year         = {2017},
+  doi          = {10.48550/arXiv.1702.08608},
+  note         = {doi: \href{https://doi.org/10.48550/arXiv.1702.08608}{\nolinkurl{10.48550/arXiv.1702.08608}}}
+}
+
+% ---------------------------------------------------------- modelos
+@article{breiman2001rf,
+  author  = {Breiman, Leo},
+  title   = {Random Forests},
+  journal = {Machine Learning},
+  volume  = {45},
+  number  = {1},
+  pages   = {5--32},
+  year    = {2001},
+  doi     = {10.1023/A:1010933404324},
+  note    = {doi: \href{https://doi.org/10.1023/A:1010933404324}{\nolinkurl{10.1023/A:1010933404324}}}
+}
+
+@inproceedings{chen2016xgboost,
+  author    = {Chen, Tianqi and Guestrin, Carlos},
+  title     = {{XGBoost}: A Scalable Tree Boosting System},
+  booktitle = {Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining},
+  pages     = {785--794},
+  year      = {2016},
+  doi       = {10.1145/2939672.2939785},
+  note      = {doi: \href{https://doi.org/10.1145/2939672.2939785}{\nolinkurl{10.1145/2939672.2939785}}}
+}
+
+@inproceedings{lou2013ga2m,
+  author    = {Lou, Yin and Caruana, Rich and Gehrke, Johannes and Hooker, Giles},
+  title     = {Accurate Intelligible Models with Pairwise Interactions},
+  booktitle = {Proceedings of the 19th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining},
+  pages     = {623--631},
+  year      = {2013},
+  doi       = {10.1145/2487575.2487579},
+  note      = {doi: \href{https://doi.org/10.1145/2487575.2487579}{\nolinkurl{10.1145/2487575.2487579}}}
+}
+
+@misc{nori2019interpretml,
+  author       = {Nori, Harsha and Jenkins, Samuel and Koch, Paul and Caruana, Rich},
+  title        = {{InterpretML}: A Unified Framework for Machine Learning Interpretability},
+  howpublished = {arXiv:1909.09223},
+  year         = {2019},
+  doi          = {10.48550/arXiv.1909.09223},
+  note         = {doi: \href{https://doi.org/10.48550/arXiv.1909.09223}{\nolinkurl{10.48550/arXiv.1909.09223}}}
+}
+
+@article{nadeau2003inference,
+  author  = {Nadeau, Claude and Bengio, Yoshua},
+  title   = {Inference for the Generalization Error},
+  journal = {Machine Learning},
+  volume  = {52},
+  number  = {3},
+  pages   = {239--281},
+  year    = {2003},
+  doi     = {10.1023/A:1024068626366},
+  note    = {doi: \href{https://doi.org/10.1023/A:1024068626366}{\nolinkurl{10.1023/A:1024068626366}}}
+}
+
+% ---------------------------------------------------------- explicacoes locais (Atividades 01-03)
+@inproceedings{ribeiro2016lime,
+  author    = {Ribeiro, Marco Tulio and Singh, Sameer and Guestrin, Carlos},
+  title     = {`{Why} Should {I} Trust You?': Explaining the Predictions of Any Classifier},
+  booktitle = {Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining},
+  pages     = {1135--1144},
+  year      = {2016},
+  doi       = {10.1145/2939672.2939778},
+  note      = {doi: \href{https://doi.org/10.1145/2939672.2939778}{\nolinkurl{10.1145/2939672.2939778}}}
+}
+
+@inproceedings{lundberg2017shap,
+  author    = {Lundberg, Scott M. and Lee, Su-In},
+  title     = {A Unified Approach to Interpreting Model Predictions},
+  booktitle = {Advances in Neural Information Processing Systems},
+  volume    = {30},
+  pages     = {4765--4774},
+  year      = {2017},
+  url       = {https://proceedings.neurips.cc/paper_files/paper/2017/hash/8a20a8621978632d76c43dfd28b67767-Abstract.html}
+}
+
+% ---------------------------------------------------------- metodos globais (Atividade 04)
+@article{friedman2008rulefit,
+  author  = {Friedman, Jerome H. and Popescu, Bogdan E.},
+  title   = {Predictive Learning via Rule Ensembles},
+  journal = {The Annals of Applied Statistics},
+  volume  = {2},
+  number  = {3},
+  pages   = {916--954},
+  year    = {2008},
+  doi     = {10.1214/07-AOAS148},
+  note    = {doi: \href{https://doi.org/10.1214/07-AOAS148}{\nolinkurl{10.1214/07-AOAS148}}}
+}
+
+@inproceedings{hooker2004additive,
+  author    = {Hooker, Giles},
+  title     = {Discovering Additive Structure in Black Box Functions},
+  booktitle = {Proceedings of the 10th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining},
+  pages     = {575--580},
+  year      = {2004},
+  doi       = {10.1145/1014052.1014122},
+  note      = {doi: \href{https://doi.org/10.1145/1014052.1014122}{\nolinkurl{10.1145/1014052.1014122}}}
+}
+
+@article{fisher2019all,
+  author  = {Fisher, Aaron and Rudin, Cynthia and Dominici, Francesca},
+  title   = {All Models are Wrong, but Many are Useful: Learning a Variable's Importance by Studying an Entire Class of Prediction Models Simultaneously},
+  journal = {Journal of Machine Learning Research},
+  volume  = {20},
+  number  = {177},
+  pages   = {1--81},
+  year    = {2019},
+  url     = {https://jmlr.org/papers/v20/18-760.html}
+}
+
+@article{lei2018loco,
+  author  = {Lei, Jing and G'Sell, Max and Rinaldo, Alessandro and Tibshirani, Ryan J. and Wasserman, Larry},
+  title   = {Distribution-Free Predictive Inference for Regression},
+  journal = {Journal of the American Statistical Association},
+  volume  = {113},
+  number  = {523},
+  pages   = {1094--1111},
+  year    = {2018},
+  doi     = {10.1080/01621459.2017.1307116},
+  note    = {doi: \href{https://doi.org/10.1080/01621459.2017.1307116}{\nolinkurl{10.1080/01621459.2017.1307116}}}
+}
+
+@inproceedings{craven1996trepan,
+  author    = {Craven, Mark W. and Shavlik, Jude W.},
+  title     = {Extracting Tree-Structured Representations of Trained Networks},
+  booktitle = {Advances in Neural Information Processing Systems},
+  volume    = {8},
+  pages     = {24--30},
+  year      = {1995},
+  url       = {https://proceedings.neurips.cc/paper_files/paper/1995/hash/45f31d16b1058d586fc3be7207b58053-Abstract.html}
+}
+
+@article{deng2019intrees,
+  author  = {Deng, Houtao},
+  title   = {Interpreting Tree Ensembles with {inTrees}},
+  journal = {International Journal of Data Science and Analytics},
+  volume  = {7},
+  number  = {4},
+  pages   = {277--287},
+  year    = {2019},
+  doi     = {10.1007/s41060-018-0144-8},
+  note    = {doi: \href{https://doi.org/10.1007/s41060-018-0144-8}{\nolinkurl{10.1007/s41060-018-0144-8}}}
+}
+
+@inproceedings{kim2016mmdcritic,
+  author    = {Kim, Been and Khanna, Rajiv and Koyejo, Oluwasanmi O.},
+  title     = {Examples are not Enough, Learn to Criticize! {Criticism} for Interpretability},
+  booktitle = {Advances in Neural Information Processing Systems},
+  volume    = {29},
+  pages     = {2280--2288},
+  year      = {2016},
+  url       = {https://proceedings.neurips.cc/paper_files/paper/2016/hash/5680522b8e2bb01943234bce7bf84534-Abstract.html}
+}
+
+% ---------------------------------------------------------- continuidade
+@misc{wang2024me5,
+  author       = {Wang, Liang and Yang, Nan and Huang, Xiaolong and Yang, Linjun and Majumder, Rangan and Wei, Furu},
+  title        = {Multilingual {E5} Text Embeddings: A Technical Report},
+  howpublished = {arXiv:2402.05672},
+  year         = {2024},
+  doi          = {10.48550/arXiv.2402.05672},
+  note         = {doi: \href{https://doi.org/10.48550/arXiv.2402.05672}{\nolinkurl{10.48550/arXiv.2402.05672}}}
+}
+
+% ---------------------------------------------------------- LOFO (Atividade 04, analise aprofundada)
+@article{williamson2023general,
+  author  = {Williamson, Brian D. and Gilbert, Peter B. and Simon, Noah R. and Carone, Marco},
+  title   = {A General Framework for Inference on Algorithm-Agnostic Variable Importance},
+  journal = {Journal of the American Statistical Association},
+  volume  = {118},
+  number  = {543},
+  pages   = {1645--1658},
+  year    = {2023},
+  doi     = {10.1080/01621459.2021.2003200},
+  note    = {doi: \href{https://doi.org/10.1080/01621459.2021.2003200}{\nolinkurl{10.1080/01621459.2021.2003200}}}
+}
+
+@article{hooker2021permutation,
+  author  = {Hooker, Giles and Mentch, Lucas and Zhou, Siyu},
+  title   = {Unrestricted Permutation Forces Extrapolation: Variable Importance Requires at Least One More Model, or There Is No Free Variable Importance},
+  journal = {Statistics and Computing},
+  volume  = {31},
+  number  = {6},
+  year    = {2021},
+  doi     = {10.1007/s11222-021-10057-z},
+  note    = {{Art. no.} 82, doi: \href{https://doi.org/10.1007/s11222-021-10057-z}{\nolinkurl{10.1007/s11222-021-10057-z}}}
+}
+
+@article{covert2021explaining,
+  author  = {Covert, Ian and Lundberg, Scott and Lee, Su-In},
+  title   = {Explaining by Removing: A Unified Framework for Model Explanation},
+  journal = {Journal of Machine Learning Research},
+  volume  = {22},
+  number  = {209},
+  pages   = {1--90},
+  year    = {2021},
+  url     = {https://jmlr.org/papers/v22/20-1316.html}
+}
+
+@article{pedregosa2011sklearn,
+  author  = {Pedregosa, Fabian and Varoquaux, Ga{\"e}l and Gramfort, Alexandre and Michel, Vincent and Thirion, Bertrand and Grisel, Olivier and Blondel, Mathieu and Prettenhofer, Peter and Weiss, Ron and Dubourg, Vincent and Vanderplas, Jake and Passos, Alexandre and Cournapeau, David and Brucher, Matthieu and Perrot, Matthieu and Duchesnay, {\'E}douard},
+  title   = {Scikit-learn: Machine Learning in {Python}},
+  journal = {Journal of Machine Learning Research},
+  volume  = {12},
+  number  = {85},
+  pages   = {2825--2830},
+  year    = {2011},
+  url     = {https://jmlr.org/papers/v12/pedregosa11a.html}
+}
+
+@misc{speer2022wordfreq,
+  author       = {Speer, Robyn},
+  title        = {{rspeer/wordfreq}: v3.0},
+  howpublished = {Zenodo, software, version 3.0.2},
+  year         = {2022},
+  doi          = {10.5281/zenodo.7199437},
+  note         = {doi: \href{https://doi.org/10.5281/zenodo.7199437}{\nolinkurl{10.5281/zenodo.7199437}}}
+}
+
+@misc{dias2023keyrecsdata,
+  author       = {Dias, Tiago and Vitorino, Jo{\~a}o and Maia, Eva and Sousa, Orlando and Pra{\c{c}}a, Isabel},
+  title        = {{KeyRecs}: Keystroke Dynamics Dataset},
+  howpublished = {Zenodo, dataset, version 1.0.0},
+  year         = {2023},
+  doi          = {10.5281/zenodo.7886743},
+  note         = {doi: \href{https://doi.org/10.5281/zenodo.7886743}{\nolinkurl{10.5281/zenodo.7886743}}}
+}
+
+@article{holm1979simple,
+  author  = {Holm, Sture},
+  title   = {A Simple Sequentially Rejective Multiple Test Procedure},
+  journal = {Scandinavian Journal of Statistics},
+  volume  = {6},
+  number  = {2},
+  pages   = {65--70},
+  year    = {1979},
+  url     = {https://www.jstor.org/stable/4615733}
+}

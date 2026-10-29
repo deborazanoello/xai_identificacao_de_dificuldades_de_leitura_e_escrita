@@ -1,0 +1,37 @@
+{
+  "HP": {
+    "max_features": 1.0,
+    "min_samples_leaf": 10
+  },
+  "K": 50,
+  "hp_reajustados": {
+    "sem fix_dwell_med": {
+      "max_features": 1.0,
+      "min_samples_leaf": 10
+    },
+    "sem fix_flight_med": {
+      "max_features": 1.0,
+      "min_samples_leaf": 10
+    },
+    "sem fix_total_cv": {
+      "max_features": 1.0,
+      "min_samples_leaf": 10
+    },
+    "sem fix_ganho_pratica": {
+      "max_features": 1.0,
+      "min_samples_leaf": 10
+    },
+    "sem dem_idade": {
+      "max_features": 1.0,
+      "min_samples_leaf": 10
+    },
+    "sem dem_genero": {
+      "max_features": 1.0,
+      "min_samples_leaf": 10
+    },
+    "sem dem_lateralidade": {
+      "max_features": 1.0,
+      "min_samples_leaf": 10
+    }
+  }
+}

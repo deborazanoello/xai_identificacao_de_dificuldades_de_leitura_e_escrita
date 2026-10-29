@@ -1,0 +1,5 @@
+obs,participante,3 · % do peso sem suporte,4 · R² local,5 · Jaccard / top-1,6 · top-1 por σ,7 · top-1 LIME vs SHAP
+A,p016,11%  ✓,0.60  ◐,0.63 / 100%  ⚠,1 distinto(s)  ✓,fix_flight_med vs fix_flight_med  ✓
+B,p092,10%  ✓,0.38  ⚠,0.64 / 100%  ⚠,1 distinto(s)  ✓,fix_flight_med vs fix_flight_med  ✓
+C,p031,10%  ✓,0.12  ⚠,0.63 / 100%  ⚠,1 distinto(s)  ✓,fix_flight_med vs fix_flight_med  ✓
+D,p041,10%  ✓,0.60  ◐,0.63 / 100%  ⚠,1 distinto(s)  ✓,fix_flight_med vs fix_flight_med  ✓

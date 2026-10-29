@@ -1,0 +1,12 @@
+{
+  "rf_base_rmse_ms": 34.61241825700665,
+  "baseline_rmse_ms": 45.16153049990604,
+  "lin_base_rmse_ms": 31.831332409150814,
+  "rho_flight_total": 0.7784335051070717,
+  "top1_estavel": 5,
+  "HP": {
+    "max_features": 1.0,
+    "min_samples_leaf": 10
+  },
+  "n": 96
+}
