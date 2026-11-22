@@ -1,7 +1,7 @@
 # Identificação de padrões de dificuldade em leitura e escrita via XAI
 
 Trabalho da disciplina Aprendizado de Máquina Explicável, UFPR, 2026.
-Allysson Souza, Débora Zanoello e Marcelo Carvalho. Professor: Anderson Ara.
+Allysson Souza, Débora Zanoello e Marcelo Carvalho Rezende Faria. Professor: Anderson Ara.
 
 O trabalho começou nas Atividades 02 a 04 com a KeyRecs, uma base de digitação com 96 participantes. Nesta etapa
 entrou uma base nova, a CompLex, que é pública e bem maior, com 8.579 termos em inglês. As duas passaram pelo
