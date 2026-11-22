@@ -1,0 +1,15 @@
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{3.1cm}
+                >{\raggedright\arraybackslash}p{5.9cm}
+                >{\raggedright\arraybackslash}p{5.9cm}@{}}
+\toprule
+Método & Escrita (KeyRecs) & Leitura (CompLex) \\
+\midrule
+H de Friedman & Maior H: CV do tempo total e tempo de voo (0,17 e 0,16) & Maior H: frequência (0,26); par relevante mais forte: comprimento e sigla (0,27) \\
+Decomposição funcional & Efeitos principais: \Rdois{} $= 0,97$ & Efeitos principais: \Rdois{} $= 0,93$ \\
+Permutação & Só o tempo de voo difere de zero (17,4 ms) & Frequência (0,291 na AUC), comprimento e sigla (0,024 e 0,023) \\
+Remoção (LOFO) & Só o tempo de voo: +10,4 ms, 30\% do RMSE & Frequência (0,167 na AUC), sigla e comprimento (0,009 e 0,008) \\
+Substitutos globais & Árvore: \Rdois{} $= 0,98$; linear: \Rdois{} $= -0,38$ & Árvore: \Rdois{} $= 0,91$; linear: \Rdois{} $= 0,79$ \\
+Extração de regras & 5 regras e SENÃO: \Rdois{} $= 0,90$ & 5 regras e SENÃO: \Rdois{} $= 0,79$ \\
+Protótipos e críticas & Erro maior nas críticas: 0,043 contra 0,033 s & Críticas bem reconhecidas: probabilidade de 0,50 contra 0,41 \\
+\bottomrule
+\end{tabular}

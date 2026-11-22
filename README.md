@@ -15,6 +15,7 @@ mesmo protocolo: modelos interpretáveis contra caixa-preta, LOFO e outros méto
 - `dados/`: cópia das duas bases, sem alteração
 - `codigo/`: scripts, tabelas e resultados
 - `artigo/`: arquivos do artigo para o Overleaf
+- `artigo_conaex/`: resumo expandido do I CONAEX para o Overleaf; tabelas e figuras geradas por `codigo/analises_conaex.ipynb`
 - `atividades/`: código das Atividades 02, 03 e 04
 
 ## Bases
@@ -32,6 +33,9 @@ bash rodar_tudo.sh     # refaz tudo, cerca de 1h40
 ```
 
 O último passo, `conferir_numeros.py`, compara cada número do artigo com as saídas dos scripts.
+
+Depois dos scripts, o notebook `codigo/analises_conaex.ipynb` lê as saídas em `codigo/resultados/` e gera as três
+tabelas e as duas figuras do resumo expandido do I CONAEX em `artigo_conaex/`. Rode-o de dentro da pasta `codigo/`.
 
 ## Observação sobre a KeyRecs
 

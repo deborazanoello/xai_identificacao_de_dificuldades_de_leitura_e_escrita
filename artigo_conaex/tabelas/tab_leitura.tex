@@ -1,0 +1,18 @@
+\begin{tabular}{@{}lcc@{}}
+\toprule
+Modelo & AUC & Prec. 10\% \\
+\midrule
+Regra das palavras raras$^{\ast}$ & 0,849 & 0,382 \\
+Regressão logística$^{\ast}$ & 0,914 & 0,506 \\
+Árvore podada$^{\ast}$ & 0,902 & 0,446 \\
+EBM$^{\ast}$ & 0,919 & 0,496 \\
+Random Forest & 0,919 & 0,491 \\
+XGBoost & 0,922 & 0,500 \\
+\bottomrule
+\end{tabular}
+
+\vspace{2pt}
+{\footnotesize $^{\ast}$Interpretável por construção. Prec. 10\%: precisão nos
+10\%. AUC do Random Forest contra EBM: $p = 0,82$;
+contra regressão logística: $p = 0,18$;
+contra XGBoost: $p = 0,12$.\par}
